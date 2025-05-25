@@ -1,95 +1,235 @@
-*{
-    margin: 0px;
-    font-family: 'inter';
-  
+/* RESET BÁSICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-#menu-superior{
- background-image: url(imagens/fundo.menusuperior.svg);
-   height: 320px;
-   margin: 0px;
+
+/* FONT FAMILY */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #fff;
+  color: #000;
 }
-#titulo-menu-superior{
-    font-size: 50px ;
-    margin-left: 30px;
-    padding-top: 130px; 
-    color: #FFFFFF;
-    
+
+/* MENU SUPERIOR */
+#menu-superior {
+  background-image: url(imagens/fundo.menusuperior.svg);
+  height: 320px;
+  margin: 0px;
+  background-size: cover;
+  background-position: center;
 }
-#texto-menu-superior{
-    font-size: 15px;
-    margin-top: 15px;
-    margin-left: 25px;
-    color: #FFFFFF;
+
+#titulo-menu-superior {
+  font-size: 50px;
+  margin-left: 30px;
+  padding-top: 130px;
+  color: #FFFFFF;
 }
-#menu-informacional{
-    background-color: #F9F9F9;
-    display: grid;
-    grid-auto-flow: column;
-    columns: auto;
-    padding: 50px; 
+
+#texto-menu-superior {
+  font-size: 15px;
+  margin-top: 15px;
+  margin-left: 25px;
+  color: #FFFFFF;
 }
-.texto{
-   margin-bottom: 20px;
-    margin-right: 80px;
+
+/* MENU INFORMACIONAL */
+#menu-informacional {
+  background-color: #F9F9F9;
+  display: grid;
+  grid-auto-flow: column;
+  columns: auto;
+  padding: 50px;
 }
-.number{
-    font-size: 30px;
+
+.texto {
+  margin-bottom: 20px;
+  margin-right: 80px;
 }
-#menu-intermediario{
-    background-color: #FFFFFF;
-    display: grid;
-    grid-auto-flow: column;
-    columns: auto;
+
+.number {
+  font-size: 30px;
 }
-#foto-menuintermediario{
-    padding: 60px;
+
+/* MENU INTERMEDIÁRIO */
+#menu-intermediario {
+  background-color: #FFFFFF;
+  display: grid;
+  grid-auto-flow: column;
+  columns: auto;
 }
-#titulo-menuintermediario{
-   margin-left: 90px;
-   margin-top: 240px;
-   font-size: 30px;
+
+#foto-menuintermediario {
+  padding: 60px;
 }
-#texto-menuintermediario{
-    margin-left: 90px;
-    margin-top: 35px;
-    font-size: 20px;
+
+#titulo-menuintermediario {
+  margin-left: 90px;
+  margin-top: 240px;
+  font-size: 30px;
 }
-#menu-formulario{
-    background-color:#303030;
-    color: #FFFFFF;
+
+#texto-menuintermediario {
+  margin-left: 90px;
+  margin-top: 35px;
+  font-size: 20px;
+}
+
+/* MENU FORMULÁRIO */
+#menu-formulario {
+  background-color: #303030;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 30px;
+}
+
+#titulo-formulario {
+  font-size: 25px;
+  padding: 36px;
+}
+
+input {
+  width: 360px;
+  height: 46px;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+  margin: 18px;
+  border: 0;
+  padding-left: 10px;
+  font-size: 16px;
+}
+
+/* foco visível acessível */
+input:focus,
+button:focus {
+  outline: 3px solid #ca8736;
+  outline-offset: 2px;
+}
+
+button {
+  font-weight: bolder;
+  margin-top: 30px;
+  font-size: 15px;
+  border: 0;
+  border-radius: 8px;
+  background-color: #C07212;
+  color: #FFFFFF;
+  width: 160px;
+  height: 42px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #ca8736;
+  color: white;
+  transform: translateY(-7px);
+  box-shadow: 0px 15px 19px #814a06;
+}
+
+/* ===========================
+   RESPONSIVIDADE PARA TABLET
+=========================== */
+
+@media (max-width: 900px) {
+  #menu-informacional,
+  #menu-intermediario {
+    display: block;
+    padding: 20px;
+  }
+
+  #menu-informacional div,
+  #menu-intermediario > div {
+    margin-bottom: 30px;
+  }
+
+  #foto-menuintermediario {
+    padding: 20px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  #titulo-menuintermediario,
+  #texto-menuintermediario {
+    margin-left: 0;
+    margin-top: 20px;
     text-align: center;
-    padding: 30px;
+  }
+
+  input {
+    width: 90%;
+    max-width: 360px;
+  }
+
+  button {
+    width: 90%;
+    max-width: 160px;
+    height: 48px;
+  }
 }
-#titulo-formulario{
-    font-size: 25px;
-    padding: 36px;
-    
-    
-}
-input{
-    width: 360px;
-    height: 46px;
-    border-radius: 8px;
-    background-color: #FFFFFF;
-    margin: 18px;
-    border: 0px;
-    padding-left: 10px;
-}
-button{
-    font-weight: bolder;
-    margin-top: 30px;
-    font-size: 15px;
-    border: 0px;
-    border-radius: 8px;
-    background-color:#C07212;
-    color: #FFFFFF;
-    width: 160px;
-    height: 42px;
-    cursor: pointer;
-}
-button:hover{
-    background-color: #ca8736;
-    color: white;
-    transform: translateY(-7px);
-    box-shadow: opx 15px 19px  #814a06;;
+
+/* ===========================
+   RESPONSIVIDADE PARA CELULAR
+=========================== */
+
+@media (max-width: 480px) {
+  #menu-superior {
+    height: auto;
+    padding: 60px 20px 40px;
+    text-align: center;
+  }
+
+  #titulo-menu-superior {
+    font-size: 28px;
+    margin-left: 0;
+    padding-top: 0;
+  }
+
+  #texto-menu-superior {
+    font-size: 14px;
+    margin-left: 0;
+  }
+
+  #menu-informacional {
+    padding: 20px 10px;
+    grid-auto-flow: row;
+  }
+
+  #menu-informacional div {
+    margin-bottom: 20px;
+    margin-right: 0;
+    text-align: center;
+  }
+
+  #titulo-menuintermediario,
+  #texto-menuintermediario {
+    font-size: 20px;
+    margin-left: 0;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  #foto-menuintermediario {
+    padding: 10px;
+    max-width: 100%;
+  }
+
+  #menu-formulario {
+    padding: 20px 10px;
+  }
+
+  input {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  button {
+    width: 100%;
+    max-width: none;
+    height: 48px;
+  }
 }
