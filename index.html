@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Corrigido initial-scale -->
+    <title>Arquitetura Residencial e Comercial | Tradição em Projetos</title> <!-- Título mais descritivo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" /> <!-- Simplificado import do Inter -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Estilo para sr-only, caso não exista -->
+    <style>
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+    </style>
+</head>
+<body>
+
+  <!-- CABEÇALHO -->
+  <header id="menu-superior">
+    <h1 id="titulo-menu-superior">Tradição em projetos de arquitetura</h1>
+    <p id="texto-menu-superior">Arquitetura residencial e comercial.</p>
+  </header>
+
+  <main>
+    <!-- SEÇÃO DE DESTAQUES NUMÉRICOS -->
+    <section id="menu-informacional" aria-label="Nossos números">
+      <div>
+        <p class="number">850</p>
+        <p class="texto">empreendimentos construídos</p>
+      </div>
+      <div>
+        <p class="number">40</p>
+        <p class="texto">anos de mercado e experiência</p>
+      </div>
+      <div>
+        <!-- Usar span para formatar número grande -->
+        <p class="number">2<span aria-hidden="true">.</span>000<span aria-hidden="true">.</span>000</p>
+        <p class="texto">m² em projetos construídos</p>
+      </div>
+    </section>
+
+    <!-- SEÇÃO SOBRE -->
+    <section id="menu-intermediario" aria-labelledby="titulo-menuintermediario">
+      <div class="texto-sobre">
+        <h2 id="titulo-menuintermediario">Arquitetos com História e Experiência.</h2>
+        <p id="texto-menuintermediario">
+          Nós realizamos desde 2002 projetos e gerenciamento de obras.<br />
+          Com mais de 800 projetos e 2.000.000 de m² construídos, tendo
+          como principal proposta transformar em realidade os sonhos de
+          clientes, criando projetos personalizados, unindo a tradição
+          e a modernidade em nossos projetos.
+        </p>
+      </div>
+      <!-- Alt text melhorado -->
+      <img id="foto-menuintermediario" src="imagens/foto.svg" alt="Vista interna de um ambiente de escritório moderno projetado." />
+    </section>
+
+    <!-- SEÇÃO FORMULÁRIO DE CONTATO -->
+    <section id="menu-formulario" aria-labelledby="titulo-formulario">
+      <h2 id="titulo-formulario">Conheça mais sobre nossos serviços:</h2>
+      <form action="https://api.sheetmonkey.io/form/g7EjD2sxhqDDN1Jwp34eeb" method="post">
+        <!-- Labels associadas corretamente -->
+        <label for="nome" class="sr-only">Nome</label>
+        <input type="text" id="nome" name="Name" placeholder="Nome" required autocomplete="name" />
+
+        <label for="email" class="sr-only">Email</label>
+        <input type="email" id="email" name="Email" placeholder="Email" required autocomplete="email" />
+
+        <input type="hidden" name="Created" value="x-sheetmonkey-current-date-time" />
+        <button type="submit">Fale Conosco</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- O script index.js não existe no repositório, removendo a chamada -->
+  <!-- <script src="index.js"></script> -->
+</body>
+</html>
+

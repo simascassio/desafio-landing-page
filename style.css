@@ -1,0 +1,247 @@
+/* RESET BÁSICO E CONFIGURAÇÕES GLOBAIS */
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth; /* Rolagem suave para links internos */
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; /* Herda box-sizing do html */
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #fff;
+  color: #000;
+  line-height: 1.6; /* Melhora legibilidade */
+}
+
+img {
+  max-width: 100%; /* Garante que imagens não ultrapassem o container */
+  height: auto;
+  display: block; /* Remove espaço extra abaixo das imagens */
+}
+
+/* CLASSE UTILITÁRIA PARA ACESSIBILIDADE */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* CABEÇALHO (MENU SUPERIOR) */
+#menu-superior {
+  background-image: url(imagens/fundo.menusuperior.svg);
+  min-height: 320px; /* Usa min-height para flexibilidade */
+  background-size: cover;
+  background-position: center;
+  padding: 80px 30px 40px; /* Ajusta padding para conteúdo */
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centraliza conteúdo verticalmente */
+}
+
+#titulo-menu-superior {
+  font-size: clamp(2rem, 5vw, 3.125rem); /* Fonte responsiva (min, ideal, max) */
+  margin-bottom: 15px; /* Espaço abaixo do título */
+  max-width: 600px; /* Limita largura para melhor leitura */
+}
+
+#texto-menu-superior {
+  font-size: clamp(0.875rem, 2vw, 1rem); /* Fonte responsiva */
+  max-width: 600px;
+}
+
+/* SEÇÃO DE DESTAQUES NUMÉRICOS (MENU INFORMACIONAL) */
+#menu-informacional {
+  background-color: #F9F9F9;
+  display: grid;
+  /* Cria colunas responsivas: repete quantas colunas de no mínimo 150px couberem */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 30px; /* Espaçamento entre itens */
+  padding: 50px 30px;
+  text-align: center;
+}
+
+#menu-informacional .number {
+  font-size: clamp(1.5rem, 4vw, 1.875rem); /* Fonte responsiva */
+  font-weight: 600; /* Destaque */
+  margin-bottom: 5px;
+}
+
+#menu-informacional .texto {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* SEÇÃO SOBRE (MENU INTERMEDIÁRIO) */
+#menu-intermediario {
+  background-color: #FFFFFF;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Duas colunas iguais por padrão */
+  align-items: center; /* Alinha itens verticalmente */
+  gap: 40px;
+  padding: 60px 30px;
+}
+
+/* Ajuste para empilhar em telas menores */
+@media (max-width: 900px) {
+  #menu-intermediario {
+    grid-template-columns: 1fr; /* Uma coluna */
+    text-align: center;
+  }
+  #foto-menuintermediario {
+    order: -1; /* Move a imagem para cima em telas menores */
+    margin: 0 auto 30px; /* Centraliza e adiciona margem abaixo */
+    max-width: 500px; /* Limita tamanho da imagem */
+  }
+}
+
+.texto-sobre {
+  max-width: 600px; /* Limita largura do texto */
+  justify-self: center; /* Centraliza o container de texto no grid */
+}
+
+#titulo-menuintermediario {
+  font-size: clamp(1.5rem, 4vw, 1.875rem);
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+#texto-menuintermediario {
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  line-height: 1.7;
+}
+
+#foto-menuintermediario {
+  max-width: 100%; /* Garante que a imagem não estoure */
+  border-radius: 8px; /* Suave arredondamento */
+}
+
+/* SEÇÃO FORMULÁRIO DE CONTATO */
+#menu-formulario {
+  background-color: #303030;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+#titulo-formulario {
+  font-size: clamp(1.25rem, 4vw, 1.5625rem);
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+#menu-formulario form {
+  max-width: 500px; /* Limita largura do formulário */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Espaço entre os campos */
+}
+
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  height: 48px; /* Altura consistente */
+  border-radius: 8px;
+  background-color: #FFFFFF;
+  border: 1px solid #ccc; /* Borda sutil */
+  padding: 0 15px; /* Padding interno */
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+/* Estilo de foco visível e acessível */
+input[type="text"]:focus,
+input[type="email"]:focus,
+button:focus {
+  outline: 3px solid #ca8736;
+  outline-offset: 2px;
+  border-color: transparent; /* Esconde borda padrão no foco */
+}
+
+button[type="submit"] {
+  font-weight: bold; /* Era bolder, ajustado para bold */
+  margin-top: 15px; /* Reduzido margin-top */
+  font-size: 1rem;
+  border: 0;
+  border-radius: 8px;
+  background-color: #C07212;
+  color: #FFFFFF;
+  width: 100%; /* Ocupa largura total no mobile */
+  max-width: 200px; /* Largura máxima */
+  height: 48px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  align-self: center; /* Centraliza o botão */
+}
+
+button[type="submit"]:hover {
+  background-color: #ca8736;
+  transform: translateY(-3px); /* Efeito hover sutil */
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Sombra mais suave */
+}
+
+/* ===========================
+   MEDIA QUERIES ADICIONAIS (Refinamentos)
+=========================== */
+
+/* Telas médias (ex: Tablets em paisagem) */
+@media (max-width: 1024px) {
+  #menu-informacional {
+    padding: 40px 25px;
+  }
+  #menu-intermediario {
+    padding: 50px 25px;
+    gap: 30px;
+  }
+}
+
+/* Telas menores (ex: Celulares) */
+@media (max-width: 480px) {
+  #menu-superior {
+    padding: 60px 20px 40px;
+    min-height: 250px; /* Reduz altura mínima */
+    text-align: center;
+  }
+
+  #titulo-menu-superior,
+  #texto-menu-superior {
+    margin-left: 0;
+    max-width: 100%; /* Permite ocupar toda a largura */
+  }
+
+  #menu-informacional {
+    padding: 30px 15px;
+    gap: 20px;
+  }
+
+  #menu-intermediario {
+    padding: 40px 15px;
+  }
+
+  #titulo-menuintermediario,
+  #texto-menuintermediario {
+    text-align: center;
+  }
+
+  #menu-formulario {
+    padding: 40px 15px;
+  }
+
+  button[type="submit"] {
+    max-width: 100%; /* Botão ocupa largura total */
+  }
+}
+
